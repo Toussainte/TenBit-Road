@@ -1,0 +1,192 @@
+:root {
+    --primary-color: #e67e22;      /* Orange Terre Rouge */
+    --secondary-color: #27ae60;    /* Vert Madagascar */
+    --dark-color: #2c3e50;
+    --light-gray: #f4f4f4;
+    --cream-beige: #f7f1e8;        /* Beige crème doux */
+    --white: #ffffff;
+}
+
+/* RESET GLOBAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fff;
+}
+
+/* SECTION TESTIMONIALS */
+.testimonials {
+    background-color: var(--cream-beige);
+    padding: 90px 20px;
+    text-align: center;
+}
+
+/* TITRE SECTION */
+.section-title {
+    font-size: 2.6rem;
+    margin-bottom: 60px;
+    color: var(--dark-color);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    animation: titleReveal 1.2s ease forwards;
+}
+
+/* GRID */
+.testimonials-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 35px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* CARTE AVIS */
+.testimonial-card {
+    background: var(--white);
+    padding: 45px 35px;
+    border-radius: 18px;
+    flex: 1 1 300px;
+    max-width: 360px;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+    border-bottom: 5px solid transparent;
+    position: relative;
+    overflow: hidden;
+
+    /* animation */
+    opacity: 0;
+    transform: translateY(40px);
+    animation: cardFadeUp 0.9s ease forwards;
+}
+
+/* DELAY AUTOMATIQUE */
+.testimonial-card:nth-child(1) { animation-delay: 0.2s; }
+.testimonial-card:nth-child(2) { animation-delay: 0.4s; }
+.testimonial-card:nth-child(3) { animation-delay: 0.6s; }
+.testimonial-card:nth-child(4) { animation-delay: 0.8s; }
+
+/* EFFET LUMIÈRE */
+.testimonial-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(230,126,34,0.15),
+        transparent
+    );
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+/* HOVER CARTE */
+.testimonial-card:hover {
+    transform: translateY(-15px) scale(1.03);
+    box-shadow: 0 25px 55px rgba(0,0,0,0.15);
+    border-color: var(--primary-color);
+}
+
+.testimonial-card:hover::before {
+    transform: translateX(100%);
+}
+
+/* ÉTOILES */
+.stars {
+    color: #f1c40f;
+    font-size: 1.4rem;
+    margin-bottom: 22px;
+}
+
+/* TEXTE AVIS */
+.quote {
+    font-style: italic;
+    color: #666;
+    line-height: 1.9;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+/* GUILLEMETS DÉCO */
+.quote::before {
+    content: "“";
+    font-size: 4rem;
+    position: absolute;
+    top: -20px;
+    left: -10px;
+    color: rgba(230,126,34,0.2);
+}
+
+/* INFOS CLIENT */
+.client-info strong {
+    display: block;
+    font-size: 1.2rem;
+    color: var(--dark-color);
+}
+
+.client-info span {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+/* AVIS LÉGÈREMENT NÉGATIFS */
+.testimonial-card.negative {
+    border-bottom-color: #e74c3c;
+}
+
+.testimonial-card.negative .quote {
+    color: #555;
+}
+
+.testimonial-card.negative .stars {
+    color: #f39c12;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .testimonial-card {
+        padding: 35px 25px;
+    }
+}
+
+/* ACCESSIBILITÉ */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* ANIMATIONS */
+@keyframes cardFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes titleReveal {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
