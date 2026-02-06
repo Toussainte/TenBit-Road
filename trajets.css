@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f7f7f7;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 850px;
+    margin: auto;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #004d99;
+    border-left: 6px solid #007bff;
+    padding-left: 10px;
+}
+
+.section {
+    margin-bottom: 35px;
+    padding: 20px;
+    background: #fafafa;
+    border-left: 5px solid #007bff;
+    border-radius: 6px;
+}
+
+.emoji-title {
+    font-weight: bold;
+    font-size: 18px;
+    color: #003366;
+}
+
+p {
+    margin: 6px 0;
+}
+
+.note {
+    background: #fff8d6;
+    padding: 10px;
+    border-left: 5px solid #ffcc00;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-style: italic;
+}
