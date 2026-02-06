@@ -1,0 +1,175 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+/*BODY*/
+body{
+    background-color: #f7f1e8;
+}
+
+
+
+/* DESTINATIONS */
+.destinations {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: -40px auto 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    padding: 15px 22px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: fadeIn 1s ease forwards;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+/* CONTAINER */
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+/* FORM */
+.reservation {
+    width: 400px;
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    animation: fadeIn 1.2s ease forwards;
+}
+
+.reservation h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+input:focus, select:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 3px rgba(13,110,253,0.15);
+    outline: none;
+}
+
+/* BUTTON */
+button {
+    margin-top: 22px;
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    border: none;
+    background: #0d6efd;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background: #003d99;
+    transform: translateY(-2px);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #f1f3f5;
+    margin-top: 40px;
+    font-size: 14px;
+}
+
+/* ANIMATIONS */
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+    .reservation {
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+}
+/* ACTIONS CONFIRMATION */
+.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+/* BOUTONS */
+.btn-retour {
+    font-family:'Times New Roman', Times, serif;
+    text-decoration: none;
+    padding: 6px 6px;
+    border-radius: 5px;
+    background: #5977a4;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.3s ease;
+}
+
+/* Zoom-in animation */
+.btn-retour:hover {
+    transform: scale(1.12);
+    box-shadow: 0 10px 25px rgba(13,110,253,0.35);
+    background: #3d629b;
+}
+
+/* Position visuelle (optionnel, lisibilité) */
+.btn-left {
+    align-self: flex-start;
+}
+
+.btn-right {
+    align-self: flex-end;
+}
+

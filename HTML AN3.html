@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation Réservation - TENBIT-ROAD</title>
+    <link rel="stylesheet" href="CSS N1.css">
+</head>
+<body>
+
+
+<main class="container">
+    <section class="reservation">
+        <h2>✅ Souhaitez-vous réserver pour :</h2>
+
+       
+        <div class="resume">
+            <p><strong>Choix de trajet :</strong> Fianarantsoa - Antananarivo <?php echo htmlspecialchars($_GET['destination']); ?></p>
+            <p><strong>Nom du réservataire :</strong> TOUSSAINTE Adriano  <?php echo htmlspecialchars($_GET['nom']); ?></p>
+            <p><strong>Nombre de passagers :</strong> 7 <?php echo htmlspecialchars($_GET['passagers']); ?></p>
+            <p><strong>Numéro de téléphone :</strong> 038 93 350 95 <?php echo htmlspecialchars($_GET['telephone']); ?></p>
+            <p><strong>Date de départ :</strong> 10/02/2026 <?php echo htmlspecialchars($_GET['date']); ?></p>
+            <p><strong>Heure de départ :</strong> 6 AM <?php echo htmlspecialchars($_GET['vehicule']); ?></p>
+            <p><strong>Type de véhicule :</strong> Sprinter Mercedes <?php echo htmlspecialchars($_GET['vehicule']); ?></p>
+            </p>
+        </div>
+
+        <div class="actions">
+        <a href="index.html" class="btn-retour">Retour à l’accueil</a>
+     <a href="index.html" class="btn-retour">Valider</a>
+        </div>
+
+        
+    </section>
+</main>
+
+<footer>
+    © 2026 Ten Bits Roads – Transport interprovincial Madagascar
+</footer>
+
+</body>
+</html>
