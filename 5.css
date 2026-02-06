@@ -1,0 +1,213 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, sans-serif;
+}
+
+body{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#f4f4f4;
+}
+
+/* Le cadre principal */
+.card{
+  width:800px;
+  height:500px;
+  background:#e7e6d8;
+  border-radius:8px;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 15px 40px rgba(0,0,0,0.15);
+}
+
+/* Formes marron */
+.shape-left{
+  position:absolute;
+  width:180px;
+  height:180px;
+  background:#a24c2c;
+  border-radius:50%;
+  left:-70px;
+  top:230px;
+}
+
+.shape-right{
+  position:absolute;
+  width:220px;
+  height:220px;
+  background:#a24c2c;
+  border-radius:50%;
+  right:-80px;
+  top:-70px;
+}
+
+/* Petites décorations (orange) */
+.orange-splash{
+  position:absolute;
+  left:170px;
+  top:90px;
+  width:70px;
+  height:40px;
+}
+
+.orange-splash span{
+  position:absolute;
+  width:18px;
+  height:50px;
+  background:#ff7f32;
+  border-radius:30px;
+  transform-origin:bottom center;
+}
+
+.orange-splash span:nth-child(1){ left:0; transform:rotate(-25deg); }
+.orange-splash span:nth-child(2){ left:25px; transform:rotate(0deg); }
+.orange-splash span:nth-child(3){ left:50px; transform:rotate(25deg); }
+
+/* Etoiles orange */
+.stars{
+  position:absolute;
+  right:220px;
+  bottom:140px;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  width:120px;
+}
+
+.stars span{
+  width:12px;
+  height:12px;
+  background:#ff7f32;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  opacity:0.9;
+}
+
+/* Conteneur des 3 images */
+.photos{
+  position:absolute;
+  inset:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:50px;
+  padding-top:40px;
+}
+
+/* Photo ovale */
+.photo{
+  width:180px;
+  height:240px;
+  border-radius:50%;
+  overflow:hidden;
+  position:relative;
+  border:6px solid rgba(255,255,255,0.8);
+  box-shadow:0 12px 25px rgba(0,0,0,0.15);
+  background:#fff;
+}
+
+.photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* inclinaison */
+.photo.left{ transform:rotate(-10deg); margin-top:-40px; }
+.photo.center{ transform:rotate(5deg); margin-top:30px; }
+.photo.right{ transform:rotate(10deg); margin-top:-10px; }
+
+/* Contour blanc dessiné */
+.photo::after{
+  content:"";
+  position:absolute;
+  inset:-12px;
+  border:3px solid rgba(255,255,255,0.7);
+  border-radius:50%;
+  transform:rotate(-8deg);
+  pointer-events:none;
+}
+
+/* Feuilles blanches (simple) */
+.leaf-left{
+  position:absolute;
+  left:70px;
+  top:190px;
+  width:140px;
+  height:140px;
+  border:2px solid rgba(255,255,255,0.7);
+  border-radius:50%;
+  transform:rotate(-25deg);
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+  opacity:0.8;
+}
+
+.leaf-right{
+  position:absolute;
+  right:40px;
+  top:70px;
+  width:180px;
+  height:180px;
+  border:2px solid rgba(255,255,255,0.7);
+  border-radius:50%;
+  transform:rotate(15deg);
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+  opacity:0.8;
+}
+
+/* Bouton en bas */
+.btn{
+  position:absolute;
+  bottom:60px;
+  left:50%;
+  transform:translateX(-50%);
+  width:300px;
+  height:55px;
+  background:#d9d9e3;
+  border-radius:14px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:white;
+  font-size:18px;
+  font-weight:bold;
+  letter-spacing:1px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.btn:hover{
+  transform:translateX(-50%) scale(1.05);
+}
+
+/* Petits icônes en bas */
+.icons{
+  position:absolute;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  gap:50px;
+}
+
+.icon{
+  width:14px;
+  height:14px;
+  background:#a24c2c;
+  border-radius:50%;
+  opacity:0.8;
+}
+
+/* Responsive */
+@media(max-width:850px){
+  .card{
+    width:95%;
+    height:520px;
+  }
+  .photos{
+    gap:20px;
+  }
+  .photo{
